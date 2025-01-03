@@ -5,6 +5,7 @@ FetchContent_Declare(
     GIT_TAG v1.15.2
 )
 
+set(INSTALL_GTEST OFF)
 FetchContent_MakeAvailable(googletest)
 
 add_executable(
