@@ -34,7 +34,7 @@ disk when it is destroyed.
 ```cpp
 sow::sow data { MyData{}, save_data_fn };
 
-data->get_mut()->a = 42;
+data.get_mut()->a = 42;
 ```
 
 Where the `save_data_fn` is a function that saves the data to disk.
@@ -51,7 +51,7 @@ But what if the data structure is modified multiple times before it is saved to 
 sow::sow data { MyData{}, save_data_fn };
 
 {
-    auto guard = data->get_mut();
+    auto guard = data.get_mut();
     guard->a = 42;
     guard->b = 43;
 }
