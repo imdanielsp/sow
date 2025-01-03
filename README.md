@@ -32,7 +32,7 @@ The SOW library solves this problem by only allowing mutation via a proxy object
 disk when it is destroyed.
 
 ```cpp
-sow::sow data { MyData{}, save_data_fn };
+sow::Sow data { MyData{}, save_data_fn };
 
 data.get_mut()->a = 42;
 ```
@@ -48,7 +48,7 @@ void save_data_fn(const MyData& data) {
 But what if the data structure is modified multiple times before it is saved to disk?
 
 ```cpp
-sow::sow data { MyData{}, save_data_fn };
+sow::Sow data { MyData{}, save_data_fn };
 
 {
     auto guard = data.get_mut();
@@ -60,7 +60,7 @@ sow::sow data { MyData{}, save_data_fn };
 Or "sow it" (save-on-write it):
 
 ```cpp
-sow::sow data { MyData{}, save_data_fn };
+sow::Sow data { MyData{}, save_data_fn };
 
 sow::it(data, [](auto& data) {
     data.a = 42;
