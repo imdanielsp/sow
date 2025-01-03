@@ -1,3 +1,5 @@
+![CI](https://github.com/imdanielsp/sow/actions/workflows/build.yml/badge.svg)
+
 # SOW – Save-On-Write
 
 The SOW library is a header-only C++ library that provides a way to save data to disk only when it is modified. This is
@@ -10,7 +12,7 @@ The SOW library was created to solve a problem I encountered while working on a 
 structure immediately after it was modified. The data structure was not modified frequently, but when it was, it was
 important to save it to disk immediately.
 
-Normally applications would mutate the data structure in memory and then save it to disk by explicitly invoking a save
+Normally, applications would mutate the data structure in memory and then save it to disk by explicitly invoking a save
 routine.
 
 ```cpp
@@ -55,7 +57,7 @@ sow::sow data { MyData{}, save_data_fn };
 }
 ```
 
-Or just "sow it" (save-on-write it):
+Or "sow it" (save-on-write it):
 
 ```cpp
 sow::sow data { MyData{}, save_data_fn };

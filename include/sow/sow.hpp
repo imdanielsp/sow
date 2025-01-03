@@ -4,9 +4,8 @@
  * @brief Save-On-Write (SOW) provides a way to persist a data structure when
  * it is modified. The persistency strategy is delegated to the data structure
  * itself via writer functions implemented by the user.
- * @date 2025-01-02
  *
- * @license MIT
+ * @date 2025-01-02
  */
 #ifndef SOW_SOW_HPP_
 #define SOW_SOW_HPP_
